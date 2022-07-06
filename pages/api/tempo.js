@@ -5,11 +5,11 @@ async function Tempo(request, response) {
 
     const charactersMarvel = await fetch(`https://gateway.marvel.com/v1/public/characters?ts=1&apikey=${apiSecret}&hash=${apiSecretHash}`);
     const charactersMarvelJson = await charactersMarvel.json();
-    const characters = charactersMarvelJson.data;
+    const characters = charactersMarvelJson.data.results;
 
     response.json({
         date: dynamicDate.toGMTString(),
-        characters: characters
+        busca: characters
     })
 }
 
