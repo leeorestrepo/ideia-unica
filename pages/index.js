@@ -1,23 +1,15 @@
-import { useState } from "react"
+import Link from "next/link"
 
 function Home() {
-    return <h1>Home</h1>
-}
-
-function Contador() {
-    const [contador,setContador] = useState(1);
-
-    function adicionarContador() {
-        setContador(contador + 1 );
-    }
-
     return (
         <div>
-            {contador}
-            <button onClick={adicionarContador}>Adicionar</button>
+            <h1>Home</h1>
+
+            <Link href="/sobre">
+                <a>Acessar a página Sobre.</a>
+            </Link>
         </div>
     )
-    
 }
 
 export default Home
